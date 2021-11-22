@@ -1,34 +1,39 @@
 import React from "react";
 import { useState } from "react";
-import ReactCardFlip from 'react-card-flip';
+import Card from './Card'
+import ReactPaginate from 'react-paginate';
+
 
 
 const Characters = ({characters}) => {
-    const [char,setChar] = useState(null)
-    console.log("check this: ");
-    console.log(characters);
+  console.log("check this: ");
+  console.log(characters);
 
-    const [isFlipped, setIsFlipped] = useState(false);
+  const [ pageNumber, setPageNumber ] = useState(0)
+  
+  const cardsPerPage = 20
+  const pagesVisited = pageNumber * cardsPerPage
+  
 
 
-    return ( 
-        <div className="char-container">
-                {characters.results.map(char =>
-                <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">    
-                        <div className="char-card" key={char.id} onClick={()=> setIsFlipped(!isFlipped)}>
-                            <div><img src={char.image}/></div>
-                            <div className="char-details">
-                                <p>Name: {char.name}</p>
-                                <p>Species: {char.species}</p>
-                            </div>
-                        </div>
-                        <div>
-                            hello
-                        </div>
-                </ReactCardFlip>
-                )}
-        </div>
-    )
+  return ( 
+    <div className="char-container">
+      {characters.results.map(char =>
+      <Card char={char} />
+      )}
+      <div className="char-pagination">
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel="next >"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          previousLabel="< previous"
+          renderOnZeroPageCount={null}
+        />
+      </div>
+    </div>
+  )
 }
  
 export default Characters;
