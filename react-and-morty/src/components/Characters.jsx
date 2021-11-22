@@ -29,11 +29,12 @@ const Characters = () => {
   return ( 
     <div className="char-container">
 
+      { isPending && <div>Loading...</div>}
+
       { isPending === false && characters.results.map(char =>
       <Card char={char} />
       )}
-
-      <Pagination handlePageClick={handlePageClick} />
+      { isPending === false && <Pagination handlePageClick={handlePageClick} /> }
 
     </div>
 

@@ -11,15 +11,17 @@ export const useFetch = (initUrl) => {
   const [data, setData] = useState(undefined);
 
   useEffect(() => {
-    fetch(url)
-      .then((response) => {
-        if (response.status !== 200) return "There must be a problem";
-        return response.json();
-      })
-      .then((json) => {
-        setData(json)
-        setIsPending(false)
-      });
+    setTimeout(() => {
+      fetch(url)
+        .then((response) => {
+          if (response.status !== 200) return "There must be a problem";
+          return response.json();
+        })
+        .then((json) => {
+          setData(json)
+          setIsPending(false)
+        });
+    }, 1000)
   }, [url]);
 
   return [data, setUrl, isPending];
