@@ -15,26 +15,21 @@ const Characters = () => {
     setPageNum(selected + 1)
   }
 
-
   console.log("isPending: ")
   console.log(isPending)
   console.log("Characters data: ");
   console.log(characters);
-
-
-  const [ pageNumber, setPageNumber ] = useState(0)
-  
-
+  console.log("----------------------------")
 
   return ( 
     <div className="char-container">
 
       { isPending && <div>Loading...</div>}
 
-      { isPending === false && characters.results.map(char =>
+      { !isPending && characters.results.map(char =>
       <Card char={char} />
       )}
-      { isPending === false && <Pagination handlePageClick={handlePageClick} /> }
+      { !isPending && <Pagination handlePageClick={handlePageClick} /> }
 
     </div>
 
