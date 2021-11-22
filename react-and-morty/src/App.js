@@ -6,11 +6,9 @@ import rickandmortylogo from "./img/rickandmortylogo.png"
 import Characters from "./components/Characters";
 
 function App() {
-  const characters = useCharacters(1);
+
   const locations = useLocations(1);
 
-  console.log("Characters data: ");
-  console.log(characters);
   console.log("Locations data: ");
   console.log(locations);
 
@@ -30,7 +28,7 @@ function App() {
       {
         showChars 
         ? 
-        <Characters characters={characters} />
+        <Characters />
         : 
         <div className="description">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus consequatur velit tempora voluptatum, quas voluptatibus sequi quae fugiat eum id nihil iusto temporibus iure dolor. Placeat reiciendis nihil error culpa.

@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
      * @param initUrl string that gives the route that the function fetch data from.
      */
 export const useFetch = (initUrl) => {
+  const [isPending, setIsPending] = useState(true)
   const [url, setUrl] = useState(initUrl);
   const [data, setData] = useState(undefined);
 
@@ -15,8 +16,11 @@ export const useFetch = (initUrl) => {
         if (response.status !== 200) return "There must be a problem";
         return response.json();
       })
-      .then((json) => setData(json));
+      .then((json) => {
+        setData(json)
+        setIsPending(false)
+      });
   }, [url]);
 
-  return [data, setUrl];
+  return [data, setUrl, isPending];
 };

@@ -10,11 +10,11 @@ import { mainUrls } from "./dataRoutes.js";
      * @param pageNum integer that gives the pagination page number. The json `info` property contains how many pages are.
      */
 export const useCharacters = (pageNum = 1) => {
-  const [characters, setUrl] = useFetch(mainUrls.characters + pageNum);
+  const [characters, setUrl, isPending] = useFetch(mainUrls.characters + pageNum);
   useEffect(() => {
     setUrl(mainUrls.characters + pageNum);
   }, [pageNum]);
-  return characters === undefined ? "Loading..." : characters;
+  return [isPending, characters === undefined ? "Loading..." : characters];
 };
 
 /**

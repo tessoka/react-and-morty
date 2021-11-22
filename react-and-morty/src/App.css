@@ -40,7 +40,7 @@
     border: 1px solid blue;
     display: flex;
     flex-direction: column;
-    
+    margin: 50px;
 }
 
 .char-card{
@@ -74,3 +74,35 @@
 .char-card p{
 
 }
+
+
+.paginationBtns {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  list-style-type: none;
+}
+
+.btn-pagi-active a {
+  background-color: #22A2BD;
+}
+
+.btn-pagi a {
+  border: 1px dashed grey;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+
+  cursor: pointer;
+}
+
+.btn-pagi a:hover {
+  color: black;
+  background-color: #8EFB64;
+}
+

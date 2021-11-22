@@ -1,38 +1,42 @@
 import React from "react";
 import { useState } from "react";
 import Card from './Card'
-import ReactPaginate from 'react-paginate';
+import { useCharacters } from '../api/useData';
+import Pagination from './Pagination'
 
 
+const Characters = () => {
 
-const Characters = ({characters}) => {
-  console.log("check this: ");
+  const [pageNum, setPageNum] = useState(1)
+  const [isPending, characters] = useCharacters(pageNum);
+
+  const handlePageClick = ({selected}) => {
+    console.log(selected + 1)
+    setPageNum(selected + 1)
+  }
+
+
+  console.log("isPending: ")
+  console.log(isPending)
+  console.log("Characters data: ");
   console.log(characters);
 
+
   const [ pageNumber, setPageNumber ] = useState(0)
-  
-  const cardsPerPage = 20
-  const pagesVisited = pageNumber * cardsPerPage
   
 
 
   return ( 
     <div className="char-container">
-      {characters.results.map(char =>
+
+      { isPending === false && characters.results.map(char =>
       <Card char={char} />
       )}
-      <div className="char-pagination">
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel="next >"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          pageCount={pageCount}
-          previousLabel="< previous"
-          renderOnZeroPageCount={null}
-        />
-      </div>
+
+      <Pagination handlePageClick={handlePageClick} />
+
     </div>
+
   )
 }
  
