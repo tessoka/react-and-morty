@@ -1,10 +1,14 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom'
 import { useState } from "react";
 import { useCharacters, useLocations } from "./api/useData";
-import rickandmortylogo from "./img/rickandmortylogo.png"
+import rickandmortylogo from "./img/RMlogo_v2.png"
 import Characters from "./components/Characters";
 import Locations from "./components/Locations";
+import LocationDetails from './components/LocationDetails'
+import Home from './components/Home'
+
 
 function App() {
 
@@ -27,32 +31,27 @@ function App() {
   }
 
   return (
-    
-    <div className="App">
-      <div className="logo">
-        <img src={rickandmortylogo} alt="" />
+    <Router>
+      <div className="App">
+        <header>
+          <div className="logo">
+            <Link to="/"><img src={rickandmortylogo} alt="" /></Link>
+          </div>
+          <div className="buttons">
+            <Link to="/characters"><button className="btn btn-characters">Characters</button></Link>
+            <Link to="/locations"><button className="btn btn-locations">Locations</button></Link>
+          </div>
+        </header>
+
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/characters" element={<Characters />} />
+          <Route exact path="/locations" element={<Locations />} />
+          <Route exact path="/locations/:id" element={<LocationDetails />} />
+        </Routes>
+
       </div>
-      <div className="buttons">
-        <button onClick={()=> handleCharClick()} className="btn btn-characters">Characters</button>
-        <button onClick={()=> handleLocClick()} className="btn btn-locations">Locations</button>
-      </div>
-      {
-        !showChars && !showLocs &&
-        <div className="description">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus consequatur velit tempora voluptatum, quas voluptatibus sequi quae fugiat eum id nihil iusto temporibus iure dolor. Placeat reiciendis nihil error culpa.
-
-        </p>
-        </div> 
-      }
-
-      {
-        showChars && <Characters />
-      }
-
-      {
-        showLocs && <Locations />
-      }
-    </div>
+    </Router>
   )
 }
 

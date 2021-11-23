@@ -5,10 +5,7 @@ const LocationDetails = () => {
 
     return (
         <div className="loc-details">
-            <p><strong>Name:</strong><br/> {loc.name}</p>
-            <p><strong>Type:</strong><br/> {loc.type}</p>
-            <div></div>
-            <div></div>
+            Location Details
         </div>
     )
 

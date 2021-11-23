@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 
-const CardLoc = ({loc}) => {
+const LocationCard = ({loc}) => {
 
   
 
@@ -19,4 +19,4 @@ const CardLoc = ({loc}) => {
   )
 }
 
-export default CardLoc
+export default LocationCard

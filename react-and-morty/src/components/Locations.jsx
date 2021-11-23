@@ -1,6 +1,6 @@
 import React from "react";
 // import { useState } from "react";
-import CardLoc from './CardLoc'
+import LocationCard from './LocationCard'
 import { useLocations } from '../api/useData';
 
 
@@ -15,7 +15,7 @@ const Locations = () => {
       { isPending && <div>Loading...</div>}
 
       { !isPending && locations.results.map(loc =>
-      <CardLoc loc={loc} />
+      <LocationCard loc={loc} />
       )}
       
     </div>
