@@ -57,6 +57,32 @@
     cursor: pointer;
 }
 
+.loc-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.loc-card {
+    padding: 15px;
+    border-radius: 15px;
+    margin: 25px;
+    display: flex;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.25);
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    
+    width: 250px; 
+    height: 150px;
+
+    cursor: pointer;
+}
+
+.loc-info{
+    width: 80%;
+}
+
 .char-card img{
     height: 100%;
     width: auto;

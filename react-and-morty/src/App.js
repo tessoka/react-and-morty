@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useCharacters, useLocations } from "./api/useData";
 import rickandmortylogo from "./img/rickandmortylogo.png"
 import Characters from "./components/Characters";
+import Locations from "./components/Locations";
 
 function App() {
 
@@ -13,7 +14,17 @@ function App() {
   console.log(locations);
 
   const [showChars, setShowChars] = useState(false);
+  const [showLocs, setShowLocs] = useState(false)
 
+  const handleCharClick = () => {
+    setShowChars(!showChars)
+    setShowLocs(false)
+  }
+
+  const handleLocClick = () => {
+    setShowLocs(!showLocs)
+    setShowChars(false)
+  }
 
   return (
     
@@ -22,19 +33,24 @@ function App() {
         <img src={rickandmortylogo} alt="" />
       </div>
       <div className="buttons">
-        <button onClick={()=> setShowChars(!showChars)} className="btn btn-characters">Characters</button>
-        <button className="btn btn-locations">Locations</button>
+        <button onClick={()=> handleCharClick()} className="btn btn-characters">Characters</button>
+        <button onClick={()=> handleLocClick()} className="btn btn-locations">Locations</button>
       </div>
       {
-        showChars 
-        ? 
-        <Characters />
-        : 
+        !showChars && !showLocs &&
         <div className="description">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus consequatur velit tempora voluptatum, quas voluptatibus sequi quae fugiat eum id nihil iusto temporibus iure dolor. Placeat reiciendis nihil error culpa.
 
         </p>
         </div> 
+      }
+
+      {
+        showChars && <Characters />
+      }
+
+      {
+        showLocs && <Locations />
       }
     </div>
   )
