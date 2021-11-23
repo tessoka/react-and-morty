@@ -124,6 +124,31 @@ header {
     width: 80%;
 }
 
+.loc-details{
+    border: 1px solid green;
+    width: 60vw;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.25);
+}
+
+.loc-innerbox{
+    border: 1px solid brown;
+}
+
+.loc-innerbox h2{
+    border: 1px solid fuchsia;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.loc-inbox-container{
+    border: 1px solid olive;
+    display: flex;
+
+}
+
 .char-card img{
     height: 100%;
     width: auto;
