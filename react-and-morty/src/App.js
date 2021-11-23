@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom'
 import { useState } from "react";
 import { useCharacters, useLocations } from "./api/useData";
-import rickandmortylogo from "./img/RMlogo_v2.png"
+import rickandmortylogo from "./img/RMlogo_v3.png"
 import Characters from "./components/Characters";
 import Locations from "./components/Locations";
 import LocationDetails from './components/LocationDetails'
