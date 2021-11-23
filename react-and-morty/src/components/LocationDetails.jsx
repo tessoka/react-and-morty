@@ -7,9 +7,11 @@ const LocationDetails = () => {
 
   const { id } = useParams()
   const [ data, url, isPending ] = useFetch('https://rickandmortyapi.com/api/location/' + id)
+  const [ charData, charUrl, charIsPending ] = useFetch('https://rickandmortyapi.com/api/character/')
+  console.log(charData);
 
-  console.log(data)
-  console.log(isPending)
+//   console.log(data)
+//   console.log(isPending)
 
     return (
       <div className="loc-details">
@@ -26,7 +28,7 @@ const LocationDetails = () => {
                     <p><b>Dimension:</b> {data.dimension}</p>
                 </div>
                 <div className="inbox-right">
-                    <p><b>Residents:</b> {data.residents.map(elem => <p>{elem}</p>)}</p>
+                    <p><b>Residents:</b> {data.residents.length}</p>
                 </div>
             </div>
 
