@@ -14,8 +14,8 @@ function App() {
 
   const locations = useLocations(1);
 
-  console.log("Locations data: ");
-  console.log(locations);
+  // console.log("Locations data: ");
+  // console.log(locations);
 
   const [showChars, setShowChars] = useState(false);
   const [showLocs, setShowLocs] = useState(false)

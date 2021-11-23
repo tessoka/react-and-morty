@@ -1,21 +1,19 @@
 import React from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 const LocationCard = ({loc}) => {
 
-  
-
   return (
-     
-      <div onClick={() => {}} className="loc-card" >
+    <Link to={`/locations/${loc.id}`}>
+      <div className="loc-card">
           <div className="loc-info">
               <p><strong>Name:</strong><br/> {loc.name}</p>
               <p><strong>Type:</strong><br/> {loc.type}</p>
           </div>
       </div>
-      
-    
+    </Link>
   )
 }
 

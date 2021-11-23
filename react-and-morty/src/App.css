@@ -98,6 +98,11 @@ header {
     margin: 25px;
 }
 
+.loc-container a {
+  text-decoration: none;
+  color: black;
+}
+
 .loc-card {
     padding: 15px;
     border-radius: 15px;

@@ -15,7 +15,7 @@ const Locations = () => {
       { isPending && <div>Loading...</div>}
 
       { !isPending && locations.results.map(loc =>
-      <LocationCard loc={loc} />
+      <LocationCard loc={loc} key={loc.id}/>
       )}
       
     </div>
