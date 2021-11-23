@@ -3,7 +3,7 @@ import { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
 
 
-const Card = ({char}) => {
+const CharacterCard = ({char}) => {
 
   const [isFlipped, setIsFlipped] = useState(false);
   // console.log("check this: ");
@@ -34,4 +34,4 @@ const Card = ({char}) => {
   )
 }
 
-export default Card
+export default CharacterCard

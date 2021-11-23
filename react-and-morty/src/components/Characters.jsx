@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Card from './Card'
+import CharacterCard from './CharacterCard'
 import { useCharacters } from '../api/useData';
 import Pagination from './Pagination'
 
@@ -27,7 +27,7 @@ const Characters = () => {
       { isPending && <div>Loading...</div>}
 
       { !isPending && characters.results.map(char =>
-      <Card char={char} />
+      <CharacterCard char={char} />
       )}
       { !isPending && <Pagination handlePageClick={handlePageClick} /> }
 
