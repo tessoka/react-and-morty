@@ -12,7 +12,7 @@ const Locations = () => {
   return ( 
     <div className="loc-container">
 
-      { isPending && <div>Loading...</div>}
+      { isPending && <div className="loading-center loading-bubble">Loading...</div>}
 
       { !isPending && locations.results.map(loc =>
       <LocationCard loc={loc} key={loc.id}/>

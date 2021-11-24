@@ -14,7 +14,7 @@ const Residents = ({url}) => {
 
   return (
     <>
-      { isPending && <div>Loading...</div>}
+      { isPending && <div className="loading-center loading-bubble">Loading...</div>}
       { !isPending && 
 
 

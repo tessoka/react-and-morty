@@ -24,7 +24,7 @@ const Characters = () => {
   return ( 
     <div className="char-container">
 
-      { isPending && <div>Loading...</div>}
+      { isPending && <div className="loading-center loading-bubble">Loading...</div>}
 
       { !isPending && characters.results.map(char =>
       <CharacterCard char={char} />

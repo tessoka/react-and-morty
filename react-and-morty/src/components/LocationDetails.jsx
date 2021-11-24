@@ -15,23 +15,22 @@ const LocationDetails = () => {
     return (
       <div className="loc-details">
 
-        { isPending && <div>Loading...</div>}
+        { isPending && <div className="loading-center">Loading...</div>}
 
         { !isPending && 
         <div className="loc-innerbox">
             <h2>Location Details - { id }</h2>
             <div className="loc-inbox-container">
-              <div className="inbox-left">
+              <div className="loc-details-info">
                 <p><b>Name:</b> {data.name}</p>
                 <p><b>Type:</b> {data.type}</p>
                 <p><b>Dimension:</b> {data.dimension}</p>
               </div>
-              <div className="inbox-right">
-                <p><b>Residents:</b></p>
+                <h3>Residents:</h3>
                 {data.residents.map(url => 
                   <Residents url={url}/>
                 )}
-              </div>
+
             </div>
 
         </div>}
