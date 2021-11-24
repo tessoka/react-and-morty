@@ -29,7 +29,7 @@ header {
 }
 
 .logo img {
-    width: 60vw;
+    width: 600px;
     height: auto;
     border: 1px solid black;
     box-shadow: 0px 0px 15px 5px #8EFB64;
@@ -38,7 +38,7 @@ header {
 
 .buttons{
     display: flex;
-    width: 60vw;
+    width: 600px;
     margin: 25px 0;
     justify-content: space-evenly;
     /* border: 1px solid red; */
