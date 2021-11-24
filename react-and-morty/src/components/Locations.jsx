@@ -35,7 +35,7 @@ const Locations = () => {
 
 
   return ( 
-    <InfiniteScroll dataLength={locationKeeper.length} next={triggerLoad} hasMore={true} loader={"..."}>
+    <InfiniteScroll dataLength={locationKeeper.length} next={triggerLoad} hasMore={pageNum < 8} loader={"Loading..."} endMessage={"End of story..."}>
       <div className="loc-container">
 
         { isPending && <div className="loading-center loading-bubble">Loading...</div>}
