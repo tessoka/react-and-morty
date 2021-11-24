@@ -1,25 +1,51 @@
 import React from "react";
-// import { useState } from "react";
 import LocationCard from './LocationCard'
 import { useLocations } from '../api/useData';
-
+import { useState, useEffect } from "react";
+import InfiniteScroll from 'react-infinite-scroll-component';
+import axios from 'axios'
 
 
 const Locations = () => {
 
-  const [isPending, locations] = useLocations(1);
+  const [ pageNum, setPageNum ] = useState(2)
+  const [ isPending, locations ] = useLocations(pageNum);
+  const [ locationKeeper, setLocationKeeper ] = useState([])
+
+  const getLoc = async (pageNum) => {
+    const pageData = await axios.get("https://rickandmortyapi.com/api/location/?page=" + pageNum)
+    for (const locs of pageData.data.results) {
+      locationKeeper.push(locs)
+    }
+    
+    setLocationKeeper([...locationKeeper])
+  }
+
+  useEffect(() => {
+    getLoc()
+  },[])
+
+  console.log(locationKeeper)
+
+  const triggerLoad = () => {
+    setPageNum(pageNum + 1)
+    getLoc(pageNum)
+  }
+
+
 
   return ( 
-    <div className="loc-container">
+    <InfiniteScroll dataLength={locationKeeper.length} next={triggerLoad} hasMore={true} loader={"..."}>
+      <div className="loc-container">
 
-      { isPending && <div className="loading-center loading-bubble">Loading...</div>}
+        { isPending && <div className="loading-center loading-bubble">Loading...</div>}
 
-      { !isPending && locations.results.map(loc =>
-      <LocationCard loc={loc} key={loc.id}/>
-      )}
-      
-    </div>
-
+          { !isPending && locationKeeper.map(loc =>
+          <LocationCard loc={loc} key={loc.id}/>
+          )}
+          
+      </div>
+    </InfiniteScroll>
   )
 }
  
