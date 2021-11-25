@@ -24,7 +24,7 @@ const Locations = () => {
   useEffect(() => {
     getLoc(pageNum)
   },[])
-  console.log(locationKeeper)
+  // console.log(locationKeeper)
 
   const triggerLoad = () => {
     
@@ -34,7 +34,7 @@ const Locations = () => {
 
 
   return ( 
-    <InfiniteScroll dataLength={locationKeeper.length} next={triggerLoad} hasMore={pageNum < 8} loader={"Loading..."} endMessage={"End of story..."}>
+    <InfiniteScroll dataLength={locationKeeper.length} next={triggerLoad} hasMore={pageNum < 8} endMessage={"End of story..."} className={"infinite-scroll"}>
       <div className="loc-container">
 
         { isPending && <div className="loading-center loading-bubble">Loading...</div>}

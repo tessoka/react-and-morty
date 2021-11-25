@@ -28,7 +28,7 @@ const LocationDetails = () => {
               </div>
                 <h3>Residents:</h3>
                 {data.residents.map(url => 
-                  <Residents url={url}/>
+                  <Residents url={url} key={url}/>
                 )}
 
             </div>

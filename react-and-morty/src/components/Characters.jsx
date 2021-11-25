@@ -15,24 +15,25 @@ const Characters = () => {
     setPageNum(selected + 1)
   }
 
-  console.log("isPending: ")
-  console.log(isPending)
-  console.log("Characters data: ");
-  console.log(characters);
-  console.log("----------------------------")
+  // console.log("isPending: ")
+  // console.log(isPending)
+  // console.log("Characters data: ");
+  // console.log(characters);
+  // console.log("----------------------------")
 
   return ( 
-    <div className="char-container">
+    <>
+      <div className="char-container">
 
-      { isPending && <div className="loading-center loading-bubble">Loading...</div>}
+        { isPending && <div className="loading-center loading-bubble">Loading...</div>}
 
-      { !isPending && characters.results.map(char =>
-      <CharacterCard char={char} />
-      )}
-      { !isPending && <Pagination handlePageClick={handlePageClick} /> }
+        { !isPending && characters.results.map(char =>
+        <CharacterCard char={char} key={char.id}/>
+        )}
 
-    </div>
-
+      </div>
+      { !isPending && <Pagination pageCount={characters.info.pages} handlePageClick={handlePageClick} /> }
+    </>
   )
 }
  

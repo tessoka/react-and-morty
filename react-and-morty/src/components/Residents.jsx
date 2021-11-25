@@ -8,8 +8,8 @@ const Residents = ({url}) => {
   const [ data, asdf, isPending ] = useFetch(url)
 
 
-  console.log(isPending)
-  console.log(data)
+  // console.log(isPending)
+  // console.log(data)
 
 
   return (
@@ -19,7 +19,7 @@ const Residents = ({url}) => {
 
 
         <div className="residents-box">
-          <CharacterCard char={data} />
+          <CharacterCard char={data} key={data.id}/>
           {/* <figure>
             <img src={data.image} />
             <figcaption>{data.name}</figcaption>
