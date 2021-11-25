@@ -8,7 +8,7 @@ import axios from 'axios'
 
 const Locations = () => {
 
-  const [ pageNum, setPageNum ] = useState(2)
+  const [ pageNum, setPageNum ] = useState(1)
   const [ isPending, locations ] = useLocations(pageNum);
   const [ locationKeeper, setLocationKeeper ] = useState([])
 
@@ -19,16 +19,15 @@ const Locations = () => {
     }
     
     setLocationKeeper([...locationKeeper])
+    setPageNum(pageNum + 1)
   }
-
   useEffect(() => {
-    getLoc()
+    getLoc(pageNum)
   },[])
-
   console.log(locationKeeper)
 
   const triggerLoad = () => {
-    setPageNum(pageNum + 1)
+    
     getLoc(pageNum)
   }
 
