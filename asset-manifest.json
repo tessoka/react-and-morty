@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-and-morty/static/css/main.f17f10aa.chunk.css",
+    "main.js": "/react-and-morty/static/js/main.32a10815.chunk.js",
+    "main.js.map": "/react-and-morty/static/js/main.32a10815.chunk.js.map",
+    "runtime-main.js": "/react-and-morty/static/js/runtime-main.726c9020.js",
+    "runtime-main.js.map": "/react-and-morty/static/js/runtime-main.726c9020.js.map",
+    "static/js/2.0b7ca634.chunk.js": "/react-and-morty/static/js/2.0b7ca634.chunk.js",
+    "static/js/2.0b7ca634.chunk.js.map": "/react-and-morty/static/js/2.0b7ca634.chunk.js.map",
+    "index.html": "/react-and-morty/index.html",
+    "precache-manifest.c9bb3beed29735eea7f1cdc82d1600ac.js": "/react-and-morty/precache-manifest.c9bb3beed29735eea7f1cdc82d1600ac.js",
+    "service-worker.js": "/react-and-morty/service-worker.js",
+    "static/css/main.f17f10aa.chunk.css.map": "/react-and-morty/static/css/main.f17f10aa.chunk.css.map",
+    "static/js/2.0b7ca634.chunk.js.LICENSE.txt": "/react-and-morty/static/js/2.0b7ca634.chunk.js.LICENSE.txt",
+    "static/media/RMlogo_v3.png": "/react-and-morty/static/media/RMlogo_v3.31931b81.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.726c9020.js",
+    "static/js/2.0b7ca634.chunk.js",
+    "static/css/main.f17f10aa.chunk.css",
+    "static/js/main.32a10815.chunk.js"
+  ]
+}
