@@ -37,16 +37,16 @@ function App() {
             <Link to="/"><img src={rickandmortylogo} alt="" /></Link>
           </div>
           <div className="buttons">
-            <Link to="/characters"><button className="btn btn-characters">Characters</button></Link>
-            <Link to="/locations"><button className="btn btn-locations">Locations</button></Link>
+            <Link to="/react-and-morty/characters"><button className="btn btn-characters">Characters</button></Link>
+            <Link to="/react-and-morty/locations"><button className="btn btn-locations">Locations</button></Link>
           </div>
         </header>
 
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/characters" element={<Characters />} />
-          <Route exact path="/locations" element={<Locations />} />
-          <Route exact path="/locations/:id" element={<LocationDetails />} />
+          <Route exact path="/react-and-morty/" element={<Home />} />
+          <Route exact path="/react-and-morty/characters" element={<Characters />} />
+          <Route exact path="/react-and-morty/locations" element={<Locations />} />
+          <Route exact path="/react-and-morty/locations/:id" element={<LocationDetails />} />
         </Routes>
 
       </div>

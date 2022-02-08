@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const LocationCard = ({loc}) => {
 
   return (
-    <Link to={`/locations/${loc.id}`}>
+    <Link to={`/react-and-morty/locations/${loc.id}`}>
       <div className="loc-card">
           <div className="loc-info">
               <p>{loc.id}</p>

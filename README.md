@@ -31,3 +31,7 @@ This was a group project where the individuals contributed to the final output d
 
 ### Pagination
 ![react-and-morty](https://github.com/tessoka/react-and-morty/blob/d1a502784373e7f20d42ee88d3224798e5a388cb/Pagination.jpg)
+
+
+## Preview
+https://tessoka.github.io/react-and-morty/
