@@ -4,6 +4,7 @@ import { useLocations } from '../api/useData';
 import { useState, useEffect } from "react";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import axios from 'axios'
+import Spinner from './Spinner'
 
 
 const Locations = () => {
@@ -37,7 +38,7 @@ const Locations = () => {
     <InfiniteScroll dataLength={locationKeeper.length} next={triggerLoad} hasMore={pageNum < 8} endMessage={"End of story..."} className={"infinite-scroll"}>
       <div className="loc-container">
 
-        { isPending && <div className="loading-center loading-bubble">Loading...</div>}
+        { isPending && <Spinner />}
 
           { !isPending && locationKeeper.map(loc =>
           <LocationCard loc={loc} key={loc.id}/>

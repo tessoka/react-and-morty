@@ -1,6 +1,7 @@
 import React from "react";
 import { useFetch } from "../api/useFetch";
 import CharacterCard from './CharacterCard'
+import Spinner from './Spinner'
 
 
 const Residents = ({url}) => {
@@ -14,7 +15,7 @@ const Residents = ({url}) => {
 
   return (
     <>
-      { isPending && <div className="loading-center loading-bubble">Loading...</div>}
+      { isPending && <Spinner />}
       { !isPending && 
 
 

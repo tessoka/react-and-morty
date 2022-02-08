@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useFetch } from '../api/useFetch'
 import Residents from './Residents'
+import Spinner from './Spinner'
 
 const LocationDetails = () => {
 
@@ -13,12 +14,12 @@ const LocationDetails = () => {
 //   console.log(isPending)
 
     return (
-      <div className="loc-details">
-
-        { isPending && <div className="loading-center">Loading...</div>}
+      <>
+        { isPending && <Spinner />}
 
         { !isPending && 
-        <div className="loc-innerbox">
+        <div className="loc-details">
+          <div className="loc-innerbox">
             <h2>Location Details - { id }</h2>
             <div className="loc-inbox-container">
               <div className="loc-details-info">
@@ -30,12 +31,10 @@ const LocationDetails = () => {
                 {data.residents.map(url => 
                   <Residents url={url} key={url}/>
                 )}
-
             </div>
-
+          </div>
         </div>}
-
-      </div>
+      </>
     )
 
 }

@@ -3,6 +3,7 @@ import { useState } from "react";
 import CharacterCard from './CharacterCard'
 import { useCharacters } from '../api/useData';
 import Pagination from './Pagination'
+import Spinner from './Spinner'
 
 
 const Characters = () => {
@@ -15,17 +16,11 @@ const Characters = () => {
     setPageNum(selected + 1)
   }
 
-  // console.log("isPending: ")
-  // console.log(isPending)
-  // console.log("Characters data: ");
-  // console.log(characters);
-  // console.log("----------------------------")
-
   return ( 
     <>
       <div className="char-container">
 
-        { isPending && <div className="loading-center loading-bubble">Loading...</div>}
+        { isPending && <Spinner />}
 
         { !isPending && characters.results.map(char =>
         <CharacterCard char={char} key={char.id}/>

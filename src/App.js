@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom'
 import { useState } from "react";
 import { useCharacters, useLocations } from "./api/useData";
