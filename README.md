@@ -22,3 +22,12 @@ This was a group project where the individuals contributed to the final output d
 - Custom Spinner
 
 ## Images
+
+### Landing Page
+![react-and-morty](https://github.com/tessoka/react-and-morty/blob/d1a502784373e7f20d42ee88d3224798e5a388cb/LandingPage.jpg)
+
+### Spinner
+![react-and-morty](https://github.com/tessoka/react-and-morty/blob/d1a502784373e7f20d42ee88d3224798e5a388cb/Spinner.jpg)
+
+### Pagination
+![react-and-morty](https://github.com/tessoka/react-and-morty/blob/d1a502784373e7f20d42ee88d3224798e5a388cb/Pagination.jpg)
